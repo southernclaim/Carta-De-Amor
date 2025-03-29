@@ -1,0 +1,81 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0e1d2;
+  font-family: 'Georgia', serif;
+}
+
+.carta-container {
+  perspective: 1500px;
+}
+
+.carta {
+  width: 300px;
+  height: 400px;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: rotateY(0deg);
+  transition: transform 1s ease-in-out;
+  cursor: pointer;
+}
+
+.carta-frente,
+.carta-verso {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url('https://www.transparenttextures.com/patterns/wood-pattern.png');
+  background-size: cover;
+  backface-visibility: hidden;
+  border: 1px solid #a87f5c;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+.carta-frente {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carta-verso {
+  transform: rotateY(180deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.carta-borda {
+  border: 5px solid #d2956b;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 10px;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.mensagem {
+  font-size: 18px;
+  color: #5a2c12;
+  text-align: center;
+  margin: 20px;
+  padding: 10px;
+  font-family: 'Georgia', serif;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 5px;
+}
+
+.carta:hover {
+  transform: rotateY(180deg);
+}
